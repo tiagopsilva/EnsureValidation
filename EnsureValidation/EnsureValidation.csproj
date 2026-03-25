@@ -13,8 +13,8 @@
     <Authors>Tiago Silva</Authors>
     <Description>A lightweight, zero-reflection fluent validation library designed for DDD domain entities and value objects.</Description>
     <PackageTags>validation;fluent;ddd;domain;entity;value-object</PackageTags>
-    <PackageProjectUrl>https://github.com/tiagosilva/EnsureValidation</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/tiagosilva/EnsureValidation</RepositoryUrl>
+    <PackageProjectUrl>https://github.com/tiagopsilva/EnsureValidation</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tiagopsilva/EnsureValidation</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>

@@ -1,7 +1,7 @@
 # EnsureValidation
 
 [![NuGet](https://img.shields.io/nuget/v/EnsureValidation.svg)](https://www.nuget.org/packages/EnsureValidation)
-[![CI](https://github.com/tiagosilva/EnsureValidation/actions/workflows/ci.yml/badge.svg)](https://github.com/tiagosilva/EnsureValidation/actions/workflows/ci.yml)
+[![CI](https://github.com/tiagopsilva/EnsureValidation/actions/workflows/ci.yml/badge.svg)](https://github.com/tiagopsilva/EnsureValidation/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 A lightweight, **zero-reflection** fluent validation library for .NET, designed for DDD domain entities and value objects.
