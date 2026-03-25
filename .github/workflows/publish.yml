@@ -17,16 +17,20 @@ jobs:
         dotnet-version: '9.0.x'
 
     - name: Restore dependencies
-      run: dotnet restore
+      run: |
+        dotnet restore EnsureValidation/EnsureValidation.csproj
+        dotnet restore EnsureValidation.Tests/EnsureValidation.Tests.csproj
 
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: |
+        dotnet build EnsureValidation/EnsureValidation.csproj --no-restore --configuration Release -f net9.0
+        dotnet build EnsureValidation.Tests/EnsureValidation.Tests.csproj --no-restore --configuration Release -f net9.0
 
     - name: Test
-      run: dotnet test --configuration Release --no-build --verbosity normal
+      run: dotnet test EnsureValidation.Tests/EnsureValidation.Tests.csproj --no-build --configuration Release --verbosity normal -f net9.0
 
     - name: Pack
-      run: dotnet pack --configuration Release --no-build -p:PackageVersion=${{ github.event.release.tag_name }}
+      run: dotnet pack EnsureValidation/EnsureValidation.csproj --configuration Release --no-build -p:PackageVersion=${{ github.event.release.tag_name }}
 
     - name: Push to NuGet
       run: dotnet nuget push "**/*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
