@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="EnsureValidation.Tests/EnsureValidation.Tests.csproj" />
+  <Project Path="EnsureValidation/EnsureValidation.csproj" />
+</Solution>

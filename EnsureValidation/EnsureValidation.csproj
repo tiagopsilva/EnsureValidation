@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net6.0;net7.0;net8.0;net9.0</TargetFrameworks>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>12</LangVersion>
+
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+
+    <PackageId>EnsureValidation</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>Tiago Silva</Authors>
+    <Description>A lightweight, zero-reflection fluent validation library designed for DDD domain entities and value objects.</Description>
+    <PackageTags>validation;fluent;ddd;domain;entity;value-object</PackageTags>
+    <PackageProjectUrl>https://github.com/tiagosilva/EnsureValidation</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/tiagosilva/EnsureValidation</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+</Project>
