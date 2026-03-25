@@ -11,7 +11,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        dotnet-version: ['6.0.x', '7.0.x', '8.0.x', '9.0.x']
+        include:
+          - dotnet-version: '6.0.x'
+            tfm: net6.0
+          - dotnet-version: '7.0.x'
+            tfm: net7.0
+          - dotnet-version: '8.0.x'
+            tfm: net8.0
+          - dotnet-version: '9.0.x'
+            tfm: net9.0
 
     steps:
     - uses: actions/checkout@v4
@@ -23,13 +31,13 @@ jobs:
 
     - name: Restore dependencies
       run: |
-        dotnet restore EnsureValidation/EnsureValidation.csproj
-        dotnet restore EnsureValidation.Tests/EnsureValidation.Tests.csproj
+        dotnet restore EnsureValidation/EnsureValidation.csproj -f ${{ matrix.tfm }}
+        dotnet restore EnsureValidation.Tests/EnsureValidation.Tests.csproj -f ${{ matrix.tfm }}
 
     - name: Build
       run: |
-        dotnet build EnsureValidation/EnsureValidation.csproj --no-restore --configuration Release
-        dotnet build EnsureValidation.Tests/EnsureValidation.Tests.csproj --no-restore --configuration Release
+        dotnet build EnsureValidation/EnsureValidation.csproj --no-restore --configuration Release -f ${{ matrix.tfm }}
+        dotnet build EnsureValidation.Tests/EnsureValidation.Tests.csproj --no-restore --configuration Release -f ${{ matrix.tfm }}
 
     - name: Test
-      run: dotnet test EnsureValidation.Tests/EnsureValidation.Tests.csproj --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage"
+      run: dotnet test EnsureValidation.Tests/EnsureValidation.Tests.csproj --no-build --configuration Release --verbosity normal --collect:"XPlat Code Coverage" -f ${{ matrix.tfm }}
